@@ -27,10 +27,6 @@ FROM python:3-onbuild
 # -------------------------------------------
 
 MAINTAINER RockyRoad
-RUN echo Pyramid-Quick  Copyright (C) Michelle Baert \
-    This program comes with ABSOLUTELY NO WARRANTY; \
-    This is free software, and you are welcome to redistribute it \
-    under certain conditions. \
-    For details see LICENSE.
+RUN cat banner.txt
 EXPOSE 8080
 CMD [ "python", "./helloworld.py" ]
