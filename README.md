@@ -39,6 +39,12 @@ or capture its ID in a variable
 
     JOB1=`docker run -dP rockyroad/pyramid-quick`
 
+You may also use the human-friendly name for `JOB1` as shown in the last column by :
+
+    $ docker ps -l
+    CONTAINER ID        IMAGE                            COMMAND                CREATED             STATUS              PORTS                     NAMES
+    4f8369887210        rockyroad/pyramid-quick:latest   "python ./helloworld   7 minutes ago       Up 7 minutes        0.0.0.0:49157->8080/tcp   sharp_heisenberg
+
 Identify the exposed address and port:
 
     HELLO_SVR=`docker port $JOB1 8080`
@@ -46,10 +52,6 @@ Identify the exposed address and port:
 Load the app in your default browser:
 
     xdg-open http://$HELLO_SVR/hello/$USER
-
-See the running apps logs
-
-    docker logs $JOB1
 
 Stop the container
 
@@ -65,9 +67,8 @@ License
 This software is distributed under [GPL v3 license](https://gnu.org/licenses/gpl.html), its documentation under
 [Creative Commons Attribution-Nonconmmercial-Share Alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
 
-* [Pyramid](http://www.pylonsproject.org/about/license)
-is offered under a BSD-like license .
+* [Pyramid](http://www.pylonsproject.org/about/license) is offered under a BSD-like license .
 * [Python 3](https://docs.python.org/3/license.html) license is GPL-compatible
-* [Docker](https://docs.docker.com/#licensing) is licensed under the Apache License, Version 2.0. See LICENSE for the full license text.
+* [Docker](https://docs.docker.com/#licensing) is licensed under the Apache License, Version 2.0.
 
 software contained in this image.
